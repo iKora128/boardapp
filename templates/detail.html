@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block custom_css %}
+{% endblock custom_css%}
+
+
+{% block header%}
+<div class="alert alert-primary" role="alert">
+    {{ object.title }}
+</div>
+{% endblock header%}
+
+{% block content %}
+<div class="container">
+    <div class="alert alert-success" role="alert">
+        <p>title: {{ object.title }}</p>
+        <p>uploader: {{ object.author }}</p>
+        <p>content: {{ object.content }}</p>
+        <p><img src="{{ object.images.url }}" alt="{{ object.title }}" width="300"></p>
+        <a href="" class="btn btn-primary" role="button" aria-pressed="true">いいね数</a>
+        <a href="" class="btn btn-secondary" role="button" aria-pressed="true">既読にする</a>
+    </div>
+    <a href="{% url 'list' %}" class="btn btn-secondary" role="button" aria-pressed="true">Listに戻る</a>
+</div>
+
+{% endblock content %}
